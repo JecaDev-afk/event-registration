@@ -1,4 +1,4 @@
-const api = 'http://127.0.0.1:8000';
+const api = "https://event-registration-xbwm.onrender.com";
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
