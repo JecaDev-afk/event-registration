@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import router
+from backend.routes import router  # бо файл routes.py лежить у backend/
 
 app = FastAPI(
     title="Event Registration API",
@@ -8,19 +8,19 @@ app = FastAPI(
     version="1.0.0"
 )
 
-#  Налаштування CORS — дозвіл на запити з фронтенду (localhost:5500)
+# Налаштування CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  # або ["*"] для всіх
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-#  Підключення роутів
+# Підключення роутера
 app.include_router(router)
 
-#  Запуск команди (лише якщо запускаєш напряму цей файл)
+# Запуск
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("backend.main:app", host="127.0.0.1", port=8000, reload=True)
