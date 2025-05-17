@@ -11,7 +11,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://127.0.0.1:5500",  # для локальної розробки
+        "http://127.0.0.1:8000",  # для локальної розробки
         "https://event-registration-liart.vercel.app",
         "https://event-registration-git-main-jecadev-afks-projects.vercel.app",
         "https://event-registration-fz4xn8sio-jecadev-afks-projects.vercel.app"
