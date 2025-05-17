@@ -122,4 +122,4 @@ async function getQuote() {
     document.getElementById("quote").textContent = "⚠️ Не вдалося отримати цитату";
   }
 }
-так
+
