@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from models import Registration, CreateRegistration
+from backend.models import Registration, CreateRegistration
 from typing import List
 from random import choice
 import json
