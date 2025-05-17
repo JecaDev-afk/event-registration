@@ -1,51 +1,72 @@
-# Реєстрація на захід
+# Event Registration API
 
-Це веб-додаток для онлайн-реєстрації учасників на подію.
-Проєкт реалізований на FastAPI (бекенд) та HTML + JavaScript (фронтенд) з базовим стилем через CSS.
+Це веб-застосунок для реєстрації користувачів на захід. Реалізовано на базі FastAPI (бекенд) та HTML/JS (фронтенд). Користувачі можуть зареєструватися, отримати випадкову мотиваційну цитату або видалити себе за email.
 
 ## Функціонал
 
 * Форма реєстрації з валідацією (email, пароль ≥ 8 символів)
-* Перегляд усіх зареєстрованих користувачів
-* Отримання користувача за ID
-* Видалення користувача
-* Отримання випадкової цитати
-* Збереження у data.json
-* Swagger-документація
-
-## Як запустити локально
-
-### 1. Встановити залежності
-
-```bash
-pip install fastapi uvicorn pydantic[email]
-```
-
-### 2. Запустити бекенд (FastAPI)
-
-```bash
-uvicorn main:app --reload
-```
-
-Swagger доступний за адресою:
-[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-### 3. Запустити фронтенд
-
-Можна через Live Server або:
-
-```bash
-cd frontend
-python -m http.server 5500
-```
-
-Відкрити в браузері:
-[http://127.0.0.1:5500](http://127.0.0.1:5500)
+* API для створення, отримання, видалення користувачів
+* Випадкові цитати через API
+* Swagger-документація на /docs
 
 ## Деплой
 
-* Бекенд (FastAPI): [https://your-backend.onrender.com](https://your-backend.onrender.com)
-* Фронтенд (GitHub Pages / Vercel): [https://your-frontend.vercel.app](https://your-frontend.vercel.app)
+* Бекенд (FastAPI): [https://event-registration-xbwm.onrender.com](https://event-registration-xbwm.onrender.com)
+* Фронтенд (Vercel): [https://event-registration-eight-pearl.vercel.app](https://event-registration-eight-pearl.vercel.app)
+
+## Як запустити локально
+
+### 1. Клонувати репозиторій
+
+Bash
+
+git clone https://github.com/ІМЯ_КОРИСТУВАЧА/event-registration.git
+cd event-registration
+
+### 2. Встановити залежності
+
+Bash
+
+pip install -r requirements.txt
+
+### 3. Запустити бекенд
+
+Bash
+
+uvicorn main:app --reload
+
+### 4. Відкрити фронтенд
+
+Відкрий frontend/index.html у браузері (двічі клікни або запусти через Live Server).
+
+---
+
+## Структура проєкту
+
+event-registration/
+├── backend/
+│   ├── main.py          # Запуск FastAPI
+│   ├── routes.py        # API маршрути
+│   ├── models.py        # Pydantic-моделі
+│   └── data.json        # Зберігання користувачів
+│
+├── frontend/
+│   ├── index.html       # Інтерфейс
+│   ├── style.css        # Стилі
+│   └── app.js           # Взаємодія з API
+│
+├── requirements.txt     # Залежності Python
+└── README.md
+
+## Приклади API
+
+* POST /users — реєстрація
+* DELETE /users/email/{email} — видалення за email
+* GET /quote — випадкова цитата
+
+---
+
+Проєкт створено для демонстрації CRUD API з фронтом, деплоєм і документацією.
 
 ## Автори
 -frontend: Ярещенко Євгеній
