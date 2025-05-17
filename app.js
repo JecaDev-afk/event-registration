@@ -18,7 +18,7 @@ function showMessage(message, type = 'success') {
   }, 4000);
 }
 
-// ------------------ Перемикач форм ------------------
+// Перемикання форм
 const regForm = document.getElementById('regForm');
 const delForm = document.getElementById('delForm');
 const switchToRegister = document.getElementById('switchToRegister');
@@ -41,8 +41,7 @@ switchToDelete.addEventListener('click', () => {
   formTitle.textContent = "Видалення користувача";
 });
 
-// ------------------ Реєстрація ------------------
-
+// Реєстрація
 regForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
@@ -80,8 +79,7 @@ regForm.addEventListener('submit', async (e) => {
   }
 });
 
-// ------------------ Видалення за email ------------------
-
+// Видалення
 delForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = e.target.email.value;
@@ -111,8 +109,7 @@ delForm.addEventListener('submit', async (e) => {
   }
 });
 
-// ------------------ Цитата ------------------
-
+// Цитата
 async function getQuote() {
   try {
     const res = await fetch(`${api}/quote`);
@@ -122,4 +119,3 @@ async function getQuote() {
     document.getElementById("quote").textContent = "⚠️ Не вдалося отримати цитату";
   }
 }
-
