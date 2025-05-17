@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація / Видалення</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2 id="formTitle">Реєстрація на захід</h2>
+
+    <div class="switch">
+        <button id="switchToRegister" class="active">Реєстрація</button>
+        <button id="switchToDelete">Видалення</button>
+    </div>
+
+    <form id="regForm">
+        <input type="text" name="name" placeholder="Ім'я" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        <button type="submit">Зареєструватися</button>
+    </form>
+
+    <form id="delForm" class="hidden">
+        <input type="email" name="email" placeholder="Email для видалення" required>
+        <button type="submit">Видалити користувача</button>
+    </form>
+
+    <div id="message" class="message"></div>
+
+    <button onclick="getQuote()">Отримати цитату</button>
+    <p id="quote"></p>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
